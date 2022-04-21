@@ -1,0 +1,15 @@
+@import '../../../../style/abstract/variables.scss';
+
+.filter__infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 370px;
+    padding-top: 10px;
+    margin: 0 auto;
+    .filter__infos--type{
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+

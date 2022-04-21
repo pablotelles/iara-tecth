@@ -1,0 +1,65 @@
+@import '../../style/abstract/variables.scss';
+
+.drinks{
+    
+    .drinks__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .drinks__title{
+            font-size: $secundary-title;
+        }
+        p{
+            color: red;
+            font-weight: bold;
+        }
+    }
+    .drinks__list{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        @media (max-width: 760px) {            
+            grid-template-columns: repeat(3, 1fr);
+            padding: 20px;
+        }
+    }
+    .drinks__item{
+        margin: 20px 0;
+        .drinks__banner{
+            position: relative;
+            max-width: 14,28%;
+            background-color: aqua;
+            .drinks__image{
+                max-width: 100%;
+            }
+            .drins__addCart{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                margin-right: 30px;
+                margin-bottom: 10px;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: red;              
+            }
+        }
+        .drinks__infos{
+            .drinks__infos--price{
+                color: gray;
+                font-size: 18px;
+                font-weight: bold;
+                &::before{
+                    content: 'R$';
+                    margin-right: 5px;
+                }
+            }
+            .drinks__infos--title{
+                font-size: $title-product-small;
+                color: rgb(97, 96, 96);
+            }
+            .drinks__infos--description{
+                color: rgb(148, 146, 146);
+                font-size: 14px;
+            }
+        }
+    }
+}

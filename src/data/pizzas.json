@@ -1,0 +1,56 @@
+[
+    {
+        "id": "1",
+        "name": "ABOBRINHA ",
+        "description": "Molho italiano, mussarela, cream cheese, abobrinha e parmesão.",
+        "price": "50",
+        "image": "https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/04/Imagem-Real-de-Pizza-PNG-1024x988.png",
+        "rate": "4.8",
+        "promotionDay": false
+    },
+    {
+        "id": "2",
+        "name": "BAIANA",
+        "description": "Molho italiano, calabresa moída apimentada, ovos e cebola.",
+        "price": "39",
+        "image": "https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/04/Imagem-Real-de-Pizza-PNG-1024x988.png",
+        "rate": "4.4",
+        "promotionDay": false
+    },
+    {
+        "id": "3",
+        "name": "ECOLÓGICA",
+        "description": "Molho Italiano, mussarela, brócolis e tomate seco.",
+        "price": "70",
+        "image": "https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/04/Imagem-Real-de-Pizza-PNG-1024x988.png",
+        "rate": "4.5",
+        "promotionDay": true
+    },
+    {
+        "id": "4",
+        "name": "PEPERONI",
+        "description": "Molho Italiano, mussarela, tomate, azeitona e peperoni.",
+        "price": "60",
+        "image": "https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/04/Imagem-Real-de-Pizza-PNG-1024x988.png",
+        "rate": "4.8",
+        "promotionDay": false
+    },
+    {
+        "id": "5",
+        "name": "DON CORLEONE",
+        "description": "Molho Italiano, mussarela especial, bacon artesanal, catupiry, tomate em cubos e parmesão.",
+        "price": "45",
+        "image": "https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/04/Imagem-Real-de-Pizza-PNG-1024x988.png",
+        "rate": "4.7",
+        "promotionDay": false
+    },
+    {
+        "id": "6",
+        "name": "BACALHAU ",
+        "description": "Molho Italiano, bacalhau, cebola e pimentão.",
+        "price": "70",
+        "image": "https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/04/Imagem-Real-de-Pizza-PNG-1024x988.png",
+        "rate": "4.9",
+        "promotionDay": false
+    }
+]

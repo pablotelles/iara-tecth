@@ -1,0 +1,34 @@
+@import '../../../../style/abstract/variables.scss';
+
+.filter {
+    display: flex;
+    background-color: #cfcfcf;
+    max-width: 370px;
+    margin: 0 auto;
+
+    .filter__button {
+        border: none;
+        padding: 10px 15px;
+        background-color: rgb(207, 207, 207);
+
+        &:focus {
+            background-color: $secundary-color;
+            color: white;
+        }
+    }
+    .filter__button--firt:focus {
+        border-radius: 5px 0 0 5px;
+        outline: none
+    }
+
+    .filter__button--last:focus {
+        border-radius: 0 5px 5px 0;
+    }
+
+    @media (max-width: 760px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
