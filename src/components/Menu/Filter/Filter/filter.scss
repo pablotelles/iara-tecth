@@ -2,33 +2,29 @@
 
 .filter {
     display: flex;
-    background-color: #cfcfcf;
-    max-width: 370px;
+    max-width: 600px;
     margin: 0 auto;
-
     .filter__button {
+        font-size: 20px;
         border: none;
         padding: 10px 15px;
-        background-color: rgb(207, 207, 207);
-
+        background-color: #cfcfcf;
+        outline: none;
+        min-width: 150px;
         &:focus {
             background-color: $secundary-color;
             color: white;
         }
     }
-    .filter__button--firt:focus {
+    .filter__button--firt {
         border-radius: 5px 0 0 5px;
-        outline: none
     }
-
-    .filter__button--last:focus {
-        border-radius: 0 5px 5px 0;
+    .filter__button--last {
+        border-radius: 0 5px 5px 0
     }
-
     @media (max-width: 760px) {
         display: flex;
         flex-direction: column;
     }
-
 }
 
