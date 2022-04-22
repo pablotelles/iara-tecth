@@ -19,11 +19,7 @@ export const Product = ({ product }) => {
                 <p className='menu__item--description'>{product.description.substring(0, 35)}...</p>
               <div className='menu__item--content'>
                 <p className='menu__item--price'>{product.price}</p>
-                <AddCartIcon
-                  className='menu__item--addCart'
-                  onClick={() => addProduct(product)}
-                />
-                <CartCheck className=' menu__item--addCart menu__item--cartCheck' />
+
               </div>
             </div>
           </article>

@@ -3,7 +3,9 @@ import { Filter } from '../../Filter/Filter/Filter'
 import './style.scss'
 import pizzas from '../../../../data/pizzas.json'
 import { AiFillStar as RateIcon } from 'react-icons/ai'
-import { ButtonsMenu } from '../ButtonsMenu/ButtonsMenu'
+import { GrAdd as AddCartIcon } from 'react-icons/gr'
+import { BsCheckLg as CartCheck } from 'react-icons/bs'
+import { handlerAddProduct } from '../../../../pages/Cart/handlerCart'
 
 export const Menu = () => {
   return (
@@ -20,7 +22,16 @@ export const Menu = () => {
               </div>
                 <h4 className='menu__item--title'>{product.name}</h4>
                 <p className='menu__item--description'>{product.description.substring(0, 35)}...</p>
-                <ButtonsMenu product={product} />
+                <div className='menu__item--content'>
+                  <p className='menu__item--price'>{product.price}</p>
+                  <AddCartIcon
+                    className='menu__item--addCart'
+                    onClick={() => {
+                      handlerAddProduct(product)
+                    }}
+                  />
+                  <CartCheck className='menu__item--addCart menu__item--cartCheck menu__item--cart' />
+                </div>
             </div>
           </article>
         ))}
