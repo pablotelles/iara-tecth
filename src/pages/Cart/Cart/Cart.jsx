@@ -1,20 +1,16 @@
 import React from 'react'
 import { GrAdd as AddCartIcon } from 'react-icons/gr'
 import { IoMdRemove as RemoveCartIcon } from 'react-icons/io'
-import { handlerAddProduct, handlerRemoveProduct } from './handlerCart'
+import { handlerAddProduct, handlerRemoveProduct } from '../handlerCart'
 import { connect } from 'react-redux'
-
 import './style.scss'
+import CartTotal from '../CartTotal/CartTotal'
+import { BuyProducts } from '../BuyProducts/BuyProducts'
 
 const Cart = (products) => {
-  const cartTotal = products.products.reduce(getTotal, 0)
-  function getTotal (cartTotal, item) {
-    return cartTotal + (item.price * item.qt)
-  }
-
   return (
     <section className='cart'>
-      <h1>R$ {cartTotal}</h1>
+      <CartTotal />
       {products.products.map(product => (
         <article className='cart__item' key={product.id}>
             <img className='cart__item--image' src={product.image} alt="" />
@@ -35,13 +31,12 @@ const Cart = (products) => {
             </div>
         </article>
       ))}
-
+      <BuyProducts />
     </section>
   )
 }
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
     products: state.cart
   }
