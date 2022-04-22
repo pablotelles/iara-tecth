@@ -6,22 +6,22 @@ import PropTypes from 'prop-types'
 import { addProduct } from '../../../../globalData/handlerCart'
 import propTypes from 'eslint-plugin-react/lib/rules/prop-types'
 
-export const Pizza = ({ pizza }) => {
+export const Product = ({ product }) => {
   return (
-        <article className={pizza.promotionDay ? 'promotionDay menu__item' : 'menu__item'} key={pizza.id}>
-            <img className='menu__item--image' src={pizza.image} alt={'foto' + pizza.name} />
+        <article className={product.promotionDay ? 'promotionDay menu__item' : 'menu__item'} key={product.id}>
+            <img className='menu__item--image' src={product.image} alt={'foto' + product.name} />
             <div className='menu__item--infos'>
               <div className='menu__item--rate'>
                 <RateIcon className='rate__icon'/>
-                <p className='rate__value'>{pizza.rate}</p>
+                <p className='rate__value'>{product.rate}</p>
               </div>
-                <h4 className='menu__item--title'>{pizza.name}</h4>
-                <p className='menu__item--description'>{pizza.description.substring(0, 35)}...</p>
+                <h4 className='menu__item--title'>{product.name}</h4>
+                <p className='menu__item--description'>{product.description.substring(0, 35)}...</p>
               <div className='menu__item--content'>
-                <p className='menu__item--price'>{pizza.price}</p>
+                <p className='menu__item--price'>{product.price}</p>
                 <AddCartIcon
                   className='menu__item--addCart'
-                  onClick={() => addProduct(pizza)}
+                  onClick={() => addProduct(product)}
                 />
                 <CartCheck className=' menu__item--addCart menu__item--cartCheck' />
               </div>
@@ -29,10 +29,10 @@ export const Pizza = ({ pizza }) => {
           </article>
   )
 }
-Pizza.defaultProps = { pizza: {} }
+Product.defaultProps = { product: {} }
 
-Pizza.propTypes = {
-  pizza: PropTypes.exact({
+Product.propTypes = {
+  product: PropTypes.exact({
     id: propTypes.number,
     name: PropTypes.string,
     description: PropTypes.string,

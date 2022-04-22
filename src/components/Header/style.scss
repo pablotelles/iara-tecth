@@ -1,11 +1,23 @@
 @import '../../style/abstract/variables.scss';
 
 header{
+    
     .logo{
         width: 150px;
     }
     .btn__ponts{
         background-color: $tertiary-color;
+    }
+    .cart__Items{
+        background-color: $secundary-color;
+        border: 2px solid $secundary-color;
+        transition: .4s;
+        &:hover{
+            background-color: $secundary-color;
+            border: 2px solid $secundary-color;
+            transform: scale(1.1);
+            transition: .4s;
+        }
     }
 }
 
