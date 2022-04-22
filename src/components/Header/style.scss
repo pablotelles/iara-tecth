@@ -1,4 +1,11 @@
 @import '../../style/abstract/variables.scss';
-.btn__ponts{
-    background-color: $tertiary-color;
+
+header{
+    .logo{
+        width: 150px;
+    }
+    .btn__ponts{
+        background-color: $tertiary-color;
+    }
 }
+

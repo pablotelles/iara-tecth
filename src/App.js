@@ -1,9 +1,13 @@
 import React from 'react'
 import { RoutesApp } from './routes'
+import { Provider } from 'react-redux'
+import { cartStore } from './globalData/cartStore'
 
 function App () {
   return (
-    <RoutesApp />
+    <Provider store={cartStore}>
+      <RoutesApp />
+    </Provider>
   )
 }
 
