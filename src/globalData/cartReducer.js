@@ -5,9 +5,15 @@ import {
   EXCLUDE__ITEM__FROM__CART,
   BUY__PRODUCT
 } from './actionsTypes'
+import pizzas from '../data/pizzas.json'
+import drinks from '../data/drinks.json'
 
 const initialState = {
-  cart: []
+  cart: [],
+  product: {
+    pizzasData: pizzas,
+    drinksData: drinks
+  }
 }
 
 export const cartReducer = (cartState = initialState, action) => {

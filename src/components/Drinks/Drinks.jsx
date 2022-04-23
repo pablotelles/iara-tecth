@@ -1,9 +1,10 @@
 import React from 'react'
 import './style.scss'
-import drinksData from '../../data/drinks.json'
 import { handlerAddProduct } from '../../pages/Cart/handlerCart'
+import { connect } from 'react-redux'
 
-export const Drinks = () => {
+const Drinks = (drinks) => {
+  const drinksData = drinks.products.drinksData
   return (
     <section className='drinks'>
       <div className='drinks__header'>
@@ -31,3 +32,10 @@ export const Drinks = () => {
     </section>
   )
 }
+const mapStateToProps = state => {
+  return {
+    products: state.product
+  }
+}
+
+export default connect(mapStateToProps)(Drinks)

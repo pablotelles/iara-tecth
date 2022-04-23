@@ -31,6 +31,7 @@ const Header = (products) => {
 }
 const mapStateToProps = state => {
   console.log(state)
+
   return {
     products: state.cart
   }
