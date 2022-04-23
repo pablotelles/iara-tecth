@@ -10,8 +10,24 @@
     transform: scale(.9);
     transition: 0.3s;
 }
-
+@mixin promotionDay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    padding: 20px;
+    border-radius: 100%;
+    transform: rotate(20deg);
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}
 .menu{
+ 
     .menu__list{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -28,6 +44,10 @@
             border: 3px solid $primary-color;
             border-radius: 20px;
         }
+        .onCart{
+            border: 3px solid $secundary-color;
+            border-radius: 10px;
+        }
         .menu__item{
             display: flex;
             align-items: center;
@@ -35,12 +55,28 @@
             padding: 10px;
             transform: scale(1);
             transition: .3s;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            .tag-cart{
+                @include promotionDay();
+                background-color: $secundary-color;
+                color: white;
+            }
+            .tag-promotion{
+                @include promotionDay();
+                background-color: $primary-color;
+                color: white;
+            }
             &:hover{
                 z-index: 9999999;
                 border-radius: 10px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                transform: scale(1.1);
                 transition: .3s;
+                @media (max-width: 760px) {
+                    transform: scale(1);
+                    box-shadow: none;
+                }
             }    
             .menu__item--image{
                 width: 100px;
