@@ -27,5 +27,5 @@ yarn start
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in your browser.
 
-<a href="https://vercel.com/pablotelles/iara-tecth">LIVE SITE<a>
+<a href="https://iara-tecth.vercel.app/">LIVE SITE<a>
 
