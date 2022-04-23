@@ -1,6 +1,6 @@
 <h1>IARA Project</h1>
 <br>
-<img src="./src/assets/imagens/banner-project.gif.gif"/>
+![banner-project gif](https://user-images.githubusercontent.com/88568500/164885971-69019139-4c98-436f-bf20-7f46f20b8323.gif)
 <br>
 <h2>Tech<h2>
 <ul>
