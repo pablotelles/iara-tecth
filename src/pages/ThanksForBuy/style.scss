@@ -2,6 +2,11 @@
 .load-delivery{
     margin: 80px auto;
     text-align: center;
+    .load-delivery__image{
+        @media (max-width: 769px) {
+            width: 100%;
+        }
+    }
     .load-delivery__texte{
         color: $primary-color;
     }

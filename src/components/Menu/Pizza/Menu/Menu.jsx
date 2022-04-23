@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { TagOnCart } from './TagOnCart'
 import { AddToCard } from './AddToCard'
-import { TagPromotionDay } from './TagPromotionDay'
+import TagPromotionDay from './TagPromotionDay'
 
 const Menu = ({ products, cart }) => {
   return (
