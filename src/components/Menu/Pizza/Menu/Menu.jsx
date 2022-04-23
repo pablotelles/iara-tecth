@@ -1,37 +1,36 @@
 import React from 'react'
 import { Filter } from '../../Filter/Filter/Filter'
 import './style.scss'
-import pizzas from '../../../../data/pizzas.json'
 import { AiFillStar as RateIcon } from 'react-icons/ai'
-import { GrAdd as AddCartIcon } from 'react-icons/gr'
-import { BsCheckLg as CartCheck } from 'react-icons/bs'
-import { handlerAddProduct } from '../../../../pages/Cart/handlerCart'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { TagOnCart } from './TagOnCart'
+import { AddToCard } from './AddToCard'
+import { TagPromotionDay } from './TagPromotionDay'
 
-export const Menu = () => {
+const Menu = ({ products, cart }) => {
   return (
     <div className='menu'>
       <Filter />
       <div className='menu__list'>
-        {pizzas.slice(0, 6).map((product) => (
-          <article className={product.promotionDay ? 'promotionDay menu__item' : 'menu__item'} key={product.id}>
+        {products.slice(0, 6).map((product) => (
+          <article className={cart.some(item => item.id === product.id)
+            ? 'onCart menu__item'
+            : product.promotionDay ? 'menu__item promotionDay' : 'menu__item' } key={product.id}>
+            <TagOnCart product={product} cart={cart} />
+            <TagPromotionDay product={product} cart={cart} />
             <img className='menu__item--image' src={product.image} alt={'foto' + product.name} />
             <div className='menu__item--infos'>
               <div className='menu__item--rate'>
                 <RateIcon className='rate__icon'/>
                 <p className='rate__value'>{product.rate}</p>
               </div>
-                <h4 className='menu__item--title'>{product.name}</h4>
-                <p className='menu__item--description'>{product.description.substring(0, 35)}...</p>
-                <div className='menu__item--content'>
+              <h4 className='menu__item--title'>{product.name}</h4>
+              <p className='menu__item--description'>{product.description.substring(0, 35)}...</p>
+              <div className='menu__item--content'>
                   <p className='menu__item--price'>{product.price}</p>
-                  <AddCartIcon
-                    className='menu__item--addCart'
-                    onClick={() => {
-                      handlerAddProduct(product)
-                    }}
-                  />
-                  <CartCheck className='menu__item--addCart menu__item--cartCheck menu__item--cart' />
-                </div>
+                  <AddToCard cart={cart} product={product} />
+               </div>
             </div>
           </article>
         ))}
@@ -40,3 +39,15 @@ export const Menu = () => {
 
   )
 }
+Menu.propTypes = {
+  products: PropTypes.array.isRequired,
+  cart: PropTypes.array.isRequired
+}
+
+const mapStateToProps = state => {
+  return {
+    products: state.product.pizzasData,
+    cart: state.cart
+  }
+}
+export default connect(mapStateToProps)(Menu)

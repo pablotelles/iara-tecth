@@ -6,19 +6,20 @@ import {
 } from '../../globalData/cartActions'
 
 export const handlerAddProduct = (product) => {
+  console.log(product)
   const cart = cartStore.getState().cart
   const verifyCart = cart.some(item => item.id === product.id)
-  // const verifyOffer = product.promotionDay ? true : false
-  console.log(product.qt)
+
+  if (product.promotionDay === true && !verifyCart) {
+    product.price -= (product.price * 0.20)
+  }
   if (verifyCart) {
     cartStore.dispatch(moreProductCart(product))
   } else {
-    console.log('add')
     product.qt = 1
     cartStore.dispatch(addToCart(product))
   }
 }
-
 export const handlerRemoveProduct = (product) => {
   if (product.qt > 1) {
     cartStore.dispatch(lessProductCart(product))

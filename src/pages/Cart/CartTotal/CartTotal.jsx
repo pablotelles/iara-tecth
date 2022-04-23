@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart as CartIcon } from 'react-icons/ai'
 import './style.scss'
 
 export const CartTotal = (products) => {
-  const cartTotal = products.products.reduce(getTotal, 0)
+  const cartTotal = products.products.reduce(getTotal, 0).toFixed(2)
   function getTotal (cartTotal, item) {
     return cartTotal + (item.price * item.qt)
   }
@@ -16,7 +16,6 @@ export const CartTotal = (products) => {
   )
 }
 const mapStateToProps = state => {
-  console.log(state)
   return {
     products: state.cart
   }
