@@ -37,5 +37,4 @@ const mapStateToProps = state => {
     products: state.product
   }
 }
-
 export default connect(mapStateToProps)(Drinks)
