@@ -9,12 +9,14 @@ export const ProductPrice = ({ product, cart }) => {
 
   return (
         <div className='menu__item--content'>
-            <p className={validationPromotion
-              ? 'menu__item--price menu__item--old-price'
-              : 'menu__item--price'}>{product.price}</p>
-            <p className={validationPromotion
-              ? 'menu__item--price menu__item__promotion--price-show'
-              : 'menu__item--price menu__item__promotion--price-hide'}>{product.promotionDay ? product.price - promotionDiscount : ''}</p>
+            <div className='menu__item--content--price'>
+                <p className={validationPromotion
+                  ? 'menu__item--price menu__item--old-price'
+                  : 'menu__item--price'}>{product.price}</p>
+                <p className={validationPromotion
+                  ? 'menu__item--price menu__item__promotion--price-show'
+                  : 'menu__item--price menu__item__promotion--price-hide'}>{product.promotionDay ? product.price - promotionDiscount : ''}</p>
+            </div>
             <AddToCard cart={cart} product={product} />
         </div>
   )
