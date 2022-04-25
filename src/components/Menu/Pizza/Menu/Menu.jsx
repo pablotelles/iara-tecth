@@ -5,9 +5,8 @@ import { AiFillStar as RateIcon } from 'react-icons/ai'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { TagOnCart } from './TagOnCart'
-import { TagPromotionDay } from './TagPromotionDay'
+import TagPromotionDay from './TagPromotionDay'
 import ProductPrice from './ProductPrice'
-
 
 const Menu = ({ products, cart }) => {
   return (
