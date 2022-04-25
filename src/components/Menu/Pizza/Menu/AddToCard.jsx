@@ -1,16 +1,25 @@
 import React from 'react'
 import './style.scss'
 import PropTypes from 'prop-types'
-import { handlerAddProduct } from '../../../../pages/Cart/handlerCart'
+import { handlerAddProduct, handlerRemoveProduct } from '../../../../pages/Cart/handlerCart'
 import { GrAdd as AddCartIcon } from 'react-icons/gr'
-import { BsCheckLg as CartCheck } from 'react-icons/bs'
+import { BsCheckLg as CartCheck, BsTrash as RemoveCartIcon } from 'react-icons/bs'
 
 export const AddToCard = ({ cart, product }) => {
   return (
     cart.some(item => item.id === product.id) === true
-      ? (<CartCheck
-                  className='menu__item--addCart menu__item--cartCheck'
-                  />)
+      ? (
+        <>
+          <CartCheck
+            className='menu__item--addCart menu__item--cartCheck'
+          />
+          <RemoveCartIcon
+            className='menu__item--remove'
+            onClick={() => handlerRemoveProduct(product)}
+          />
+        </>
+        )
+
       : <AddCartIcon
                   className='menu__item--addCart'
                   onClick={() => {

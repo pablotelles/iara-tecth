@@ -5,8 +5,8 @@ import { AiFillStar as RateIcon } from 'react-icons/ai'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { TagOnCart } from './TagOnCart'
-import { AddToCard } from './AddToCard'
 import TagPromotionDay from './TagPromotionDay'
+import ProductPrice from './ProductPrice'
 
 const Menu = ({ products, cart }) => {
   return (
@@ -27,10 +27,7 @@ const Menu = ({ products, cart }) => {
               </div>
               <h4 className='menu__item--title'>{product.name}</h4>
               <p className='menu__item--description'>{product.description.substring(0, 35)}...</p>
-              <div className='menu__item--content'>
-                  <p className='menu__item--price'>{product.price}</p>
-                  <AddToCard cart={cart} product={product} />
-               </div>
+              <ProductPrice product={product} />
             </div>
           </article>
         ))}
