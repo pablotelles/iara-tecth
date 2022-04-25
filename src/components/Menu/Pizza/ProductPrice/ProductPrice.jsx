@@ -1,7 +1,8 @@
 import React from 'react'
-import { AddToCard } from './AddToCard'
+import { AddToCard } from '../AddToCart/AddToCard'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import './style.scss'
 
 export const ProductPrice = ({ product, cart }) => {
   const validationPromotion = product.promotionDay

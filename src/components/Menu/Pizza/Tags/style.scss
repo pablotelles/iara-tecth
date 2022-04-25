@@ -1,0 +1,28 @@
+@import '../../../../style/abstract/variables.scss';
+@mixin promotionDay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    font-size: 10px;
+    line-height: 1;
+    text-align: center;
+    padding: 20px;
+    border-radius: 100%;
+    transform: rotate(20deg);
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}
+.tag-cart{
+    @include promotionDay();
+    background-color: $secundary-color;
+    color: white;
+}
+.tag-promotion{
+    @include promotionDay();
+    background-color: $primary-color;
+    color: white;
+}
+ 
