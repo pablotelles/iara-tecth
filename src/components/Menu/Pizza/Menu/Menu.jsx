@@ -4,7 +4,7 @@ import './style.scss'
 import { AiFillStar as RateIcon } from 'react-icons/ai'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { TagOnCart } from '../Tags/TagOnCart'
+import TagOnCart from '../Tags/TagOnCart'
 import TagPromotionDay from '../Tags/TagPromotionDay'
 import ProductPrice from '../ProductPrice/ProductPrice'
 
@@ -17,8 +17,8 @@ const Menu = ({ products, cart }) => {
           <article className={cart.some(item => item.id === product.id)
             ? 'onCart menu__item'
             : product.promotionDay ? 'menu__item promotionDay' : 'menu__item' } key={product.id}>
-            <TagOnCart product={product} cart={cart} />
-            <TagPromotionDay product={product} cart={cart} />
+            <TagOnCart product={product} />
+            <TagPromotionDay product={product} />
             <img className='menu__item--image' src={product.image} alt={'foto' + product.name} />
             <div className='menu__item--infos'>
               <div className='menu__item--rate'>
@@ -37,8 +37,8 @@ const Menu = ({ products, cart }) => {
   )
 }
 Menu.propTypes = {
-  products: PropTypes.array.isRequired,
-  cart: PropTypes.array.isRequired
+  products: PropTypes.array,
+  cart: PropTypes.array
 }
 
 const mapStateToProps = state => {
