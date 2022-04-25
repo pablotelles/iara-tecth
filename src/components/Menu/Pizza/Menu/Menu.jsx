@@ -8,6 +8,7 @@ import { TagOnCart } from './TagOnCart'
 import { TagPromotionDay } from './TagPromotionDay'
 import ProductPrice from './ProductPrice'
 
+
 const Menu = ({ products, cart }) => {
   return (
     <div className='menu'>
